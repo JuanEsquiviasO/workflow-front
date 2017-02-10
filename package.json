@@ -1,0 +1,14 @@
+{
+  "name": "workflow_front",
+  "version": "1.0.0",
+  "description": "workflow fronted",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@juanesquiviaso",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
