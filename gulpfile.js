@@ -6,7 +6,13 @@ gulp.task('default', function(){
 });
 
 gulp.task('sass', function(){
-	return gulp.src('scss/main.scss')
+	return gulp.src('scss/**/*.scss')
 		.pipe(sass())
 		.pipe(gulp.dest('app/css'));
 });
+
+// gulp.watch('file', ['tarea'])
+gulp.task('watch', function(){
+	gulp.watch('scss/**/*.scss', ['sass'])
+});
+

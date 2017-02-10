@@ -1,2 +1,5 @@
 body {
-  background-color: greenyellow; }
+  background-color: white; }
+  body p {
+    margin: 0 auto;
+    color: white; }
