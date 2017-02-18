@@ -1,5 +1,1 @@
-body {
-  background-color: greenyellow; }
-  body p {
-    margin: 0 auto;
-    color: black; }
+body{background-color:#adff2f}body p{margin:0 auto;color:#000}main{display:flex;justify-content:center}main div{background-color:gray}
