@@ -5,6 +5,7 @@ const pump = require('pump');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
+const htmlmin = require('gulp-htmlmin');
 const browserSync = require('browser-sync').create();
 
 gulp.task('serve', ['sass'], function(){
@@ -15,6 +16,13 @@ gulp.task('serve', ['sass'], function(){
 	gulp.watch('app/js/*.js', ['compress']);
 	gulp.watch('scss/**/*.scss', ['sass']);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
+	gulp.watch("./*.html", ['minify']);
+});
+
+gulp.task('minify', function() {
+  return gulp.src('./*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('app'));
 });
 
 gulp.task('autoprefix', () =>
