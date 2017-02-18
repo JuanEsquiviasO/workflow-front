@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
 const cssnano = require('gulp-cssnano');
+const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 gulp.task('serve', ['sass'], function(){
@@ -14,6 +15,12 @@ gulp.task('serve', ['sass'], function(){
 	gulp.watch('scss/**/*.scss', ['sass']);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
+
+gulp.task('optimize', () =>
+    gulp.src('img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('app/img'))
+);
 
 gulp.task('compress', function(cb){
 	pump([
@@ -31,9 +38,5 @@ gulp.task('sass', function(){
 		.pipe(cssnano())
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.stream());
-});
-
-gulp.task('watch', function(){
-	gulp.watch('scss/**/*.scss', ['sass'])
 });
 
