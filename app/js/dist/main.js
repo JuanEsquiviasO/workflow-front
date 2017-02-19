@@ -1,1 +1,1 @@
-!function(){function n(n){return n}function o(n){console.info(n,", welcome to hangar pilot!")}o(n("Fokker"))}();
+!function(){function o(o){return o}function n(o){console.info(o,", welcome to hangar of SDF-1, good luck pilot!!")}n(o("Fokker"))}();
