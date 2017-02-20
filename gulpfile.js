@@ -47,5 +47,3 @@ gulp.task('css', function(){
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.stream());
 });
-
-// vid 10
